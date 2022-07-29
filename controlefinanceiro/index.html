@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle Financeiro</title>
+    <link rel="shortcut icon" href="imagens/favicon_io/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="cabecalho">Controle Financeiro</div> 
+    <main>
+
+        <div id="caixavalores" title="Saldo em Conta">
+            <div class="valores">
+                <p>Saldo</p>            
+                <p>R$ 0,00</p>
+            </div>   
+            <div class="valores" title="Total de Entradas">
+                <p>Entradas</p>
+                <p>R$ 0,00</p>
+            </div>
+            <div class="valores" title="Total de Saídas">
+                <p>Saídas</p>
+                <p>R$ 0,00</p>
+            </div>     
+        </div>
+
+        <div id="divvazia"></div>
+        
+        <div id="divcampovalor">
+            <input class="valor" id="inputvalor" type="number" placeholder="Informe o valor">
+            <input class="descricao" id="inputdescricao" type="text" placeholder="Informe a descrição">
+            <input class="data" id="inputdata" type="date">
+            <select>
+                <option>Entrada</option>
+                <option>Saída</option>
+              </select>            
+            <button>Incluir valor</button>            
+        </div>
+    </main>        
+</body>
+</html>
