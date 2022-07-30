@@ -122,4 +122,9 @@ button:active {
     color: #0D1821;
     background-color: white;
     border-radius: 5px;
+    box-shadow: 5px 5px #00000014;
+}
+
+.valores:hover {
+    background-color: rgb(235, 235, 235);
 }
