@@ -13,7 +13,7 @@ div {
     font-family: 'Ubuntu', sans-serif;
 }
 
-div#cabecalho {    
+header#cabecalho {    
     background-color: #127369;
     height: 50px;
     padding-top: 36px;
@@ -22,6 +22,7 @@ div#cabecalho {
     padding-left: 0px;
     
     color: white;
+    font-family: 'Ubuntu', sans-serif;
     font-weight: bold;
     font-size: 50px;
     text-align: center;
@@ -37,13 +38,8 @@ div#divvazia{
     height: 120px;
 }
 
-div#divcampovalor {
-/*    
-  border-width: 2px;
-  border-style: dashed;
-  border-color: black;
-*/  
-  text-align: center;
+form#formcampovalor {
+    text-align: center;
 }
 
 input {    

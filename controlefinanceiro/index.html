@@ -9,9 +9,10 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="cabecalho">Controle Financeiro</div> 
+    <header id="cabecalho">
+        Controle Financeiro
+    </header> 
     <main>
-
         <div id="caixavalores" title="Saldo em Conta">
             <div class="valores">
                 <p>Saldo</p>            
@@ -29,7 +30,7 @@
 
         <div id="divvazia"></div>
         
-        <div id="divcampovalor">
+        <form id="formcampovalor">
             <input class="valor" id="inputvalor" type="number" placeholder="Informe o valor">
             <input class="descricao" id="inputdescricao" type="text" placeholder="Informe a descrição">
             <input class="data" id="inputdata" type="date">
@@ -38,7 +39,7 @@
                 <option>Saída</option>
               </select>            
             <button>Incluir valor</button>            
-        </div>
+        </form>
     </main>        
 </body>
 </html>
