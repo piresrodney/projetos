@@ -96,13 +96,13 @@ input#inputbotao {
     font-size: 15px;
 }
 
-button:hover {
+input#inputbotao:hover {
     background-color: #0c4943;
     color: white;
     border: 1px solid #127369;
 }
 
-button:active {
+input#inputbotao:active {
     background-color: white;
     color: #0c4943;;
 }
