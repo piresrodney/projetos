@@ -83,7 +83,7 @@ select {
     font-family: 'Source Sans Pro', sans-serif; 
 }
 
-button {
+input#inputbotao {
     margin: 0;
     height: 35px;
     width: 110px;
