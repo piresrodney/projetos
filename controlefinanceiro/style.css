@@ -14,32 +14,33 @@ div {
 }
 
 header#cabecalho {    
-    background-color: #127369;
+    background-color: #127369; 
     height: 50px;
-    padding-top: 36px;
-    padding-right: 0px;
-    padding-bottom: 0px;
-    padding-left: 0px;
+    padding: 2.5%;
     
     color: white;
+    font-size: 300%; 
     font-family: 'Ubuntu', sans-serif;
     font-weight: bold;
-    font-size: 50px;
-    text-align: center;
+    text-align: center;          
 }
 
 div#caixavalores {
-    background-color: #127369;
+    background-color: #127369;    
     text-align: center;
-    height: 65px;
+    height: 65px;    
 }
 
-div#divvazia{
+div.divvazia{
     height: 120px;
 }
 
-form#formcampovalor {
-    text-align: center;
+form {
+    height: 10px;
+}
+
+form#formcampovalor {    
+    text-align: center;   
 }
 
 input {    
@@ -64,7 +65,7 @@ input#inputvalor, input#inputdescricao, input#inputdata {
     font-size: 18px;
 }
 
-input#inputdata {
+input#inputdata {    
     height: 35px;
     width: 200px;
     border-radius: 4.5px;
@@ -73,7 +74,7 @@ input#inputdata {
     font-size: 18px;
 }
 
-select {
+select {  
     height: 35px;
     width: 135px;
     border-radius: 4.5px;
@@ -109,16 +110,17 @@ input#inputbotao:active {
 
 .valores {
     display: inline-block;
-    margin: 30px;
-    height: 120px;
-    width: 280px;
-    text-align: center;
-    font-weight: bold;
-    font-size: 25px;
-    color: #0D1821;
+    margin: 3%;
+    height: 130px;
+    width: 280px;    
     background-color: white;
     border-radius: 5px;
     box-shadow: 5px 5px #00000014;
+
+    text-align: center;
+    font-weight: bold;
+    font-size: 25px;    
+    color: #0D1821;
 }
 
 .valores:hover {

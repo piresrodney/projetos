@@ -9,11 +9,9 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header id="cabecalho">
-        Controle Financeiro
-    </header> 
-    <main>
-        <div id="caixavalores" title="Saldo em Conta">
+    <header id="cabecalho">Controle Financeiro</header> 
+    <main>                
+        <div id="caixavalores" title="Saldo em Conta">            
             <div class="valores">
                 <p>Saldo</p>            
                 <p>R$ 0,00</p>
@@ -25,22 +23,22 @@
             <div class="valores" title="Total de Saídas">
                 <p>Saídas</p>
                 <p>R$ 0,00</p>
-            </div>     
+            </div>                 
         </div>
 
-        <div id="divvazia"></div>
+        <div class="divvazia"></div>
         
         <form id="formcampovalor">
             <input class="valor" id="inputvalor" type="number" placeholder="Informe o valor">
+            
             <input class="descricao" id="inputdescricao" type="text" placeholder="Informe a descrição">
-            <input class="data" id="inputdata" type="date">
+            <input class="data" id="inputdata" type="date">            
             <select id="tipo">
                 <option>Entrada</option>
                 <option>Saída</option>
-              </select>            
-            <!--<button onclick="gravarDadoFinanceiro()">Incluir valor</button>            -->
+              </select>                        
             <input id="inputbotao" type="button" value="Incluir valor" onclick="gravarDadoFinanceiro()"></input>  
-        </form>
+        </form>        
     </main>  
     
     <script src="controle-financeiro.js"></script>
