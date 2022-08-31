@@ -9,36 +9,46 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header id="cabecalho">Controle Financeiro</header> 
-    <main>                
-        <div id="caixavalores" title="Saldo em Conta">            
+    <header class="header">
+        <div>
+            <img src="imagens/favicon_io/favicon-32x32.png" alt="logo-money" class="logo-money">
+            Controle Financeiro
+        </div>
+    </header> 
+    <main>                       
+        <div class="caixa-valores" title="Saldo em Conta">            
             <div class="valores">
-                <p>Saldo</p>            
-                <p>R$ 0,00</p>
+                <div class="texto-valores">
+                    <p>Saldo</p>
+                    <p>R$ 0,00</p>
+                </div>
             </div>   
             <div class="valores" title="Total de Entradas">
-                <p>Entradas</p>
-                <p>R$ 0,00</p>
+                <div class="texto-valores">
+                    <p>Entradas</p>
+                    <p>R$ 0,00</p>
+                </div>
             </div>
             <div class="valores" title="Total de Saídas">
-                <p>Saídas</p>
-                <p>R$ 0,00</p>
+                <div class="texto-valores">
+                    <p>Saídas</p>
+                    <p>R$ 0,00</p>
+                </div>
             </div>                 
         </div>
-
-        <div class="divvazia"></div>
-        
-        <form id="formcampovalor">
-            <input class="valor" id="inputvalor" type="number" placeholder="Informe o valor">
-            
-            <input class="descricao" id="inputdescricao" type="text" placeholder="Informe a descrição">
-            <input class="data" id="inputdata" type="date">            
-            <select id="tipo">
-                <option>Entrada</option>
-                <option>Saída</option>
-              </select>                        
-            <input id="inputbotao" type="button" value="Incluir valor" onclick="gravarDadoFinanceiro()"></input>  
-        </form>        
+        <div class="formulary">
+            <form class="formulary-margin">
+                <input class="value" id="inputvalor" type="number" placeholder="Informe o valor">            
+                <input class="description" id="inputdescricao" type="text" placeholder="Informe a descrição">
+                <input class="date" id="inputdata" type="date">
+                <select class="type" id="tipo">
+                    <option>Entrada</option>
+                    <option>Saída</option>
+                </select>
+                <input class="button" id="inputbotao" type="button" value="Incluir valor" onclick="gravarDadoFinanceiro()"></input>
+            </form>
+        </div>       
+              
     </main>  
     
     <script src="controle-financeiro.js"></script>

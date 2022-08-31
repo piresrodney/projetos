@@ -3,126 +3,207 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400&display=swap');
 
-body {
-    margin: 0;
+* {
     padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+}
+body {
     background-color: #B6F3CE;
 }
-
-div {
-    font-family: 'Ubuntu', sans-serif;
+.caixa-valores {
+    display: flex;
+    justify-content: space-around;    
+    flex-wrap: wrap;    
 }
-
-header#cabecalho {    
-    background-color: #127369; 
-    height: 50px;
-    padding: 2.5%;
-    
-    color: white;
-    font-size: 300%; 
-    font-family: 'Ubuntu', sans-serif;
-    font-weight: bold;
-    text-align: center;          
+.valores:hover {
+    background-color: rgb(235, 235, 235);
+    transition: 0.4s;
 }
-
-div#caixavalores {
-    background-color: #127369;    
-    text-align: center;
-    height: 65px;    
+.formulary {
+    display: flex;
+    justify-content: space-around;
 }
-
-div.divvazia{
-    height: 120px;
+.value[type=number]{
+    -moz-appearance: textfield;
 }
-
-form {
-    height: 10px;
-}
-
-form#formcampovalor {    
-    text-align: center;   
-}
-
-input {    
-    font-family: 'Source Sans Pro', sans-serif;
-}    
-
-input#inputvalor::-webkit-outer-spin-button,
-input#inputvalor::-webkit-inner-spin-button {
+.value::-webkit-outer-spin-button,
+.value::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
-input#inputvalor[type=number]{
-    -moz-appearance: textfield;
-}
-
-input#inputvalor, input#inputdescricao, input#inputdata {
-    height: 35px;
-    width: 300px;
-    border-radius: 4.5px;
-    border-color: rgba(168, 168, 168, 0.199);
-    border-width: 1px;
-    font-size: 18px;
-}
-
-input#inputdata {    
-    height: 35px;
-    width: 200px;
-    border-radius: 4.5px;
-    border-color: rgba(168, 168, 168, 0.199);
-    border-width: 1px;
-    font-size: 18px;
-}
-
-select {  
-    height: 35px;
-    width: 135px;
-    border-radius: 4.5px;
-    border-color: rgba(168, 168, 168, 0.199);
-    border-width: 1px;
-    font-size: 18px;    
-    font-family: 'Source Sans Pro', sans-serif; 
-}
-
-input#inputbotao {
-    margin: 0;
-    height: 35px;
-    width: 110px;
-    background-color: #127369;
-    color: white;
-    border: none;
-    border-radius: 4.5px;
-    font-family: 'Source Sans Pro', sans-serif;
-    font-weight: 400;
-    font-size: 15px;
-}
-
-input#inputbotao:hover {
+.button:hover {
     background-color: #0c4943;
     color: white;
     border: 1px solid #127369;
 }
-
-input#inputbotao:active {
+.button:active {
     background-color: white;
     color: #0c4943;;
 }
-
-.valores {
-    display: inline-block;
-    margin: 3%;
-    height: 130px;
-    width: 280px;    
-    background-color: white;
-    border-radius: 5px;
-    box-shadow: 5px 5px #00000014;
-
-    text-align: center;
-    font-weight: bold;
-    font-size: 25px;    
-    color: #0D1821;
+@media (max-width: 2560px) {
+    .logo-money {
+        width: 40px;
+    }
+    .header {
+        height: 110px;
+        background-color: #127369; 
+        color: white;    
+        font-size: 300%; 
+        font-weight: bold;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .valores {    
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 250px;
+        height: 120px;
+        background-color: white;
+        margin: 10px 15px;
+        border-radius: 5px;
+        box-shadow: 5px 5px #00000014;
+        transition: 0.4s; 
+    }
+    .texto-valores{
+        text-align: center;
+        font-size: 25px;
+        font-weight: bold;
+        color: #0D1821;
+    }
+    .formulary-margin {
+        margin-top: 8px;
+    }
+    .value, .description, .date, .type {
+        height: 35px;
+        width: 200px;
+        border-radius: 4.5px;
+        border-color: rgba(168, 168, 168, 0.199);
+        border-width: 1px;
+        font-size: 18px;
+    }
+    .button {
+        margin: 0;
+        height: 35px;
+        width: 110px;
+        background-color: #127369;
+        color: white;
+        border: none;
+        border-radius: 4.5px;
+        font-family: 'Source Sans Pro', sans-serif;
+        font-weight: 400;
+        font-size: 15px;
+    }
 }
-
-.valores:hover {
-    background-color: rgb(235, 235, 235);
+@media (max-width: 768px) {
+    .logo-money {
+        width: 22px;
+    }
+    .header {
+        height: 75px;
+        background-color: #127369;
+        color: white;
+        font-size: 190%;
+        font-weight: bold;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .valores {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 160px;
+        height: 80px;
+        background-color: white;
+        margin: 5px 1px;
+        border-radius: 5px;
+        box-shadow: 5px 5px #00000014;
+        transition: 0.4s;
+    }
+    .texto-valores{
+        text-align: center;
+        font-size: 18px;
+        font-weight: bold;
+        color: #0D1821;
+    }
+    .formulary-margin {
+        margin-top: 15px;
+    }
+    .value, .description, .date, .type {
+        height: 25px;
+        width: 135px;
+        border-radius: 4.5px;
+        border-color: rgba(168, 168, 168, 0.199);
+        border-width: 1px;
+        font-size: 12px;
+    }    
+}
+@media (max-width: 425px) {
+    .valores {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100px;
+        height: 50px;
+        background-color: white;
+        margin: 5px 1px;
+        border-radius: 5px;
+        box-shadow: 5px 5px #00000014;
+        transition: 0.4s;
+    }
+    .texto-valores {
+        text-align: center;
+        font-size: 12px;
+        font-weight: bold;
+        color: #0D1821;
+    }
+    .value, .description, .date, .type, .button {
+        height: 16px;
+        width: 80px;
+        border-radius: 4.5px;
+        border-color: rgba(168, 168, 168, 0.199);
+        border-width: 1px;
+        font-size: 7.5px;
+    }
+    .formulary-margin {
+        margin-top: 5px;
+    }
+    .button {
+        margin: 0;
+        height: 15px;
+        width: 60px;
+        background-color: #127369;
+        color: white;
+        border: none;
+        border-radius: 4.5px;
+        font-family: 'Source Sans Pro', sans-serif;
+        font-weight: 400;
+        font-size: 8px;
+    }
+}
+@media (max-width: 375px) {
+    .value, .description, .date, .type, .button {
+        height: 16px;
+        width: 60px;
+        border-radius: 4.5px;
+        border-color: rgba(168, 168, 168, 0.199);
+        border-width: 1px;
+        font-size: 6.5px;
+    }
+    .button {
+        margin: 0;
+        height: 15px;
+        width: 49px;
+        background-color: #127369;
+        color: white;
+        border: none;
+        border-radius: 4.5px;
+        font-family: 'Source Sans Pro', sans-serif;
+        font-weight: 400;
+        font-size: 6px;
+    }
 }
