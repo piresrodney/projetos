@@ -1,0 +1,65 @@
+@import "../variable/colors/color.scss";
+@import "../variable/font/font.scss";
+@import "../default/header-navegation/header-navegation.scss";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;   
+    font-family: $font-default;     
+}
+
+body {    
+    background-color: $background-color-page;
+    color: $font-color;
+}
+
+li {
+    list-style: none;
+}
+
+h1 {
+    font-size: 48px;
+    font-weight: bold;
+}
+
+p {
+    font-size: 20px;
+    padding-top: 25px;
+}
+
+section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.border-text-end {
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+}
+
+@media (max-width: 500px) {
+    h1 {
+        padding-top: 100px;
+    }
+}
+
+@media (max-width: 375px) {
+    h1 {
+        padding-top: 50px;
+    }
+}
+
+@media (max-width: 276px) {
+    h1 {
+        padding-top: 105px;
+    }
+}
+
+@media (max-width: 245px) {
+    h1 {
+        padding-top: 150px;
+    }
+}

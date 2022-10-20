@@ -1,0 +1,165 @@
+.navegation {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #1B263B;
+  position: fixed;
+  width: 100%;
+}
+
+.navegation a {
+  text-decoration: none;
+  color: #E0E1DD;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.nav-option ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.nav-option a {
+  padding: 15px 10px;
+}
+
+.button-contact {
+  background-color: transparent;
+  color: #E0E1DD;
+  width: 120px;
+  border: 2px solid #E0E1DD;
+  padding: 10px;
+  border-radius: 20px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.button-contact:hover {
+  color: #1B263B;
+  background-color: #E0E1DD;
+  border: 2px solid #1B263B;
+  transition: 0.4s;
+}
+
+@media (max-width: 500px) {
+  .navegation {
+    justify-content: center;
+    align-items: center;
+  }
+  .nav-option li {
+    margin: 10px;
+  }
+}
+@media (max-width: 375px) {
+  .image-top {
+    display: none;
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Nunito", Arial, Helvetica, sans-serif;
+}
+
+body {
+  background-color: #E0E1DD;
+  color: #001219;
+}
+
+li {
+  list-style: none;
+}
+
+h1 {
+  font-size: 48px;
+  font-weight: bold;
+}
+
+p {
+  font-size: 20px;
+  padding-top: 25px;
+}
+
+section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+.border-text-end {
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+}
+
+@media (max-width: 500px) {
+  h1 {
+    padding-top: 100px;
+  }
+}
+@media (max-width: 375px) {
+  h1 {
+    padding-top: 50px;
+  }
+}
+@media (max-width: 276px) {
+  h1 {
+    padding-top: 105px;
+  }
+}
+@media (max-width: 245px) {
+  h1 {
+    padding-top: 150px;
+  }
+}
+.section-apresentation {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 135px;
+  gap: 30px;
+}
+
+.text-apresentation {
+  flex: 2 1 300px;
+}
+
+.image-apresentation {
+  flex: 1 0 160px;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: #1B263B;
+  font-weight: bolder;
+}
+
+.social ul {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+}
+
+.project {
+  display: grid;
+  align-items: center;
+  padding: 20px;
+  gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.project img {
+  border: 1px solid black;
+  padding: 50px 75px;
+}
+
+/*# sourceMappingURL=style.css.map */

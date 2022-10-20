@@ -1,0 +1,13 @@
+@import "../variable/colors/color.scss";
+
+a {
+    text-decoration: none;
+    color: $background-color-nav;
+    font-weight: bolder;
+}
+
+.social ul {
+    display: flex;   
+    justify-content: center; 
+    gap: 50px;
+}
