@@ -1,0 +1,15 @@
+@import "../variable/colors/color.scss";
+
+#project {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+#project img {
+  width: 50%;
+  height: 50%;  
+  border: 2px solid $font-color;
+  border-radius: 3px;
+}

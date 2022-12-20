@@ -169,17 +169,18 @@ a {
   gap: 50px;
 }
 
-.project {
+#project {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
-  padding: 20px;
+  justify-content: center;
   gap: 20px;
 }
 
-.project img {
-  border: 1px solid black;
-  padding: 50px 75px;
+#project img {
+  width: 50%;
+  height: 50%;
+  border: 2px solid #001219;
+  border-radius: 3px;
 }
 
 /*# sourceMappingURL=style.css.map */
