@@ -1,0 +1,117 @@
+header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 1.3rem;
+  font-size: 2rem;
+  background-color: rgb(91, 202, 150);
+  color: #fff;
+}
+
+@media (max-width: 352px) {
+  header {
+    font-size: 1.8rem;
+  }
+}
+@media (max-width: 321px) {
+  header {
+    text-align: center;
+  }
+}
+label {
+  font-size: 1.5rem;
+  font-weight: bolder;
+  width: 95px;
+}
+
+.inputs-product {
+  padding: 3px;
+  border-radius: 5px;
+  border: 1px solid gray;
+  font-size: 1rem;
+  font-weight: 600;
+  width: 15rem;
+}
+
+#div-fields {
+  text-align: center;
+}
+
+#div-button {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+#button-post {
+  color: #fff;
+  background-color: rgb(91, 202, 150);
+  border: 2px solid rgb(91, 202, 150);
+  border-radius: 5px;
+  width: 150px;
+  font-weight: 700;
+}
+
+#button-post:hover {
+  color: rgb(91, 202, 150);
+  background-color: #fff;
+  border: 2px solid rgb(91, 202, 150);
+  transition: 0.3s;
+}
+
+#button-post:active {
+  color: #fff;
+  background-color: rgb(189, 187, 187);
+}
+
+table {
+  margin-top: 15px;
+}
+
+table th {
+  background-color: rgb(91, 202, 150);
+  border: 1px solid rgb(189, 187, 187);
+  color: white;
+  width: 150px;
+  padding-left: 10px;
+}
+
+table td {
+  border: 1px solid rgb(189, 187, 187);
+  padding-left: 10px;
+}
+
+td img {
+  margin: 2px 0;
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+}
+
+td:nth-child(4) {
+  text-align: center;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Nunito", Arial, Helvetica, sans-serif;
+  background-color: rgb(230, 230, 230);
+}
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 2rem 0;
+}
+
+@media (max-width: 343px) {
+  form {
+    text-align: center;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

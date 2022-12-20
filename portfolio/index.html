@@ -18,8 +18,10 @@
             <div class="nav-option">
                 <ul>
                     <li><a href="#home">Home</a></li>
-                    <li><a href="#about-me">Sobre mim</a></li>
-                    <li><a href="#project">Projetos</a></li>
+                    <li id="li-about-me" onclick="scrollerAboutMe()">Sobre mim</li>
+                    <li id="li-project" onclick="scrollerProject()">Projetos</li>
+                    <!-- <li><a href="#project">Projetos</a></li> -->
+
                     <a href="https://api.whatsapp.com/send?phone=5511983759098&text=Ol%C3%A1%2C%20vi%20seu%20portf%C3%B3lio." target="_blank"><button class="button-contact">Contato</button></a>
                 </ul>
             </div>
@@ -42,13 +44,13 @@
         </div>
     </section>
 
-    <section class="section-about">    
+    <section class="section-about" id="about-me">    
         <h1>Sobre mim</h1>
-        <div class="text-about" id="about-me">        
+        <div class="text-about">        
             <p class="border-text-start">Meu nome é Rodney, tenho <span class="year-old" title="Calculado utilizando JavaScript">XXX</span> anos e sou apaixonado por desenvolvimento de software desde 2010, quando tive o primeiro contato com Pascal na faculdade.</p>
 
             <br>
-
+            
             <p>Hoje, em <span class="current-year" title="Calculado utilizando JavaScript">XXX</span> trabalho com o que amo há <span class="job-year" title="Calculado utilizando JavaScript">XXX</span> anos na <a href="https://praxio.com.br" target="_blank" title="Clique para acessar o site de Praxio">Praxio</a> (empresa do setor de tranporte de passageiros urbanos e rodoviário e logística). No dia dia utilizado Delphi e o banco de dados Oracle e nos últimos meses tenho me aventurado no mundo do desenlvimento WEB.</p>
 
             <br>
@@ -63,17 +65,22 @@
                     <li><a href="#"><img src="./image/social/linkedin_black_logo_icon_147114.png" alt="perfil linkedin" title="LinkedIn"></img></a></li>
                 </ul>
             </div>
-            
         </div>
     </section>
 
-    <section class="section-project">
+    <section class="section-project" id="project">
         <h1>Projetos</h1>
 
-        <div class="project" id="project">
+        <div class="project">
             <div><img src="./image/icon/favicon_io/android-chrome-192x192.png" alt=""></div>
             <div><img src="./image/icon/favicon_io/android-chrome-192x192.png" alt=""></div>
             <div><img src="./image/icon/favicon_io/android-chrome-192x192.png" alt=""></div>
+            <!-- <div><img src="./image/icon/favicon_io/android-chrome-192x192.png" alt=""></div>
+            <div><img src="./image/icon/favicon_io/android-chrome-192x192.png" alt=""></div>
+            <div><img src="./image/icon/favicon_io/android-chrome-192x192.png" alt=""></div>
+            <div><img src="./image/icon/favicon_io/android-chrome-192x192.png" alt=""></div>
+            <div><img src="./image/icon/favicon_io/android-chrome-192x192.png" alt=""></div>
+            <div><img src="./image/icon/favicon_io/android-chrome-192x192.png" alt=""></div> -->
         </div>
     </section>
 
@@ -81,6 +88,9 @@
     <script src="./javascript/old-calculator.js/old-calculator.js"></script>
     <script src="./javascript/current-year/current-year.js"></script>
     <script src="./javascript/job-year/job-year.js"></script>
+    <script src="./javascript//scroll/scrollerStart.js"></script>
+    <script src="./javascript//scroll/scrollerAboutMe.js"></script>
+    <script src="./javascript//scroll/scrollerProject.js"></script>
     <!-- <script src="./javascript/header-navegation/scroll-down.js"></script> -->
 </body>
 </html>

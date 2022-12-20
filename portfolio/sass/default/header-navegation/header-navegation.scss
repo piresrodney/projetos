@@ -16,6 +16,16 @@
     color: $background-color-page;
     font-size: 18px;
     font-weight: 500;
+    
+}
+
+#li-about-me, #li-project {
+    cursor: pointer;
+    color: $background-color-page;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 10px;
+    // border: 1px solid white;    
 }
   
 .nav-option ul {

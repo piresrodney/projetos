@@ -1,0 +1,22 @@
+header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 1.3rem;
+    font-size: 2rem;
+    background-color: $background-color-header;
+    color: $font-color-header;
+}
+
+@media (max-width: 352px) {
+    header {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 321px) {
+    header {
+        text-align: center;
+    }
+}

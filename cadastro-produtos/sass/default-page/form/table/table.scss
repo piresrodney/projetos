@@ -1,0 +1,30 @@
+@import "../../../variable/colors/colors.scss";
+
+table {
+    // border: 1px solid $color-border-table;
+    margin-top: 15px;
+}
+
+table th {
+    background-color: $background-color-header;
+    border: 1px solid $color-border-table;
+    color: white;
+    width: 150px;
+    padding-left: 10px;
+}
+
+table td {
+    border: 1px solid $color-border-table;
+    padding-left: 10px;
+}
+
+td img {
+    margin: 2px 0;
+    height: 20px;
+    width: 20px;
+    cursor: pointer;    
+}
+
+td:nth-child(4) { // Alinha ao centro uma celula especifica
+    text-align: center;
+}

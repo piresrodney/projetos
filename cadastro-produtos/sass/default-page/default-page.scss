@@ -1,0 +1,25 @@
+@import "../variable/fonts/font.scss";
+@import "../variable/colors/colors.scss";
+@import "../header-page/header-page.scss";
+@import "../default-page/form/form.scss";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: $font-default;
+    background-color: $background-color-page;
+}
+
+form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 2rem 0;
+}
+
+@media (max-width: 343px) {
+    form {
+        text-align: center;
+    }
+}

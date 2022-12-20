@@ -9,6 +9,10 @@
     font-family: $font-default;     
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {    
     background-color: $background-color-page;
     color: $font-color;
@@ -33,6 +37,14 @@ section {
     margin: 0 auto;
     padding-left: 25px;
     padding-right: 25px;
+}
+
+#about-me {
+    padding-top: 100px;
+}
+
+#project {
+    padding-top: 10px;
 }
 
 .border-text-end {

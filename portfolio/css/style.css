@@ -16,6 +16,14 @@
   font-weight: 500;
 }
 
+#li-about-me, #li-project {
+  cursor: pointer;
+  color: #E0E1DD;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 10px;
+}
+
 .nav-option ul {
   display: flex;
   justify-content: center;
@@ -68,6 +76,10 @@
   font-family: "Nunito", Arial, Helvetica, sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: #E0E1DD;
   color: #001219;
@@ -92,6 +104,14 @@ section {
   margin: 0 auto;
   padding-left: 25px;
   padding-right: 25px;
+}
+
+#about-me {
+  padding-top: 100px;
+}
+
+#project {
+  padding-top: 10px;
 }
 
 .border-text-end {
@@ -150,11 +170,11 @@ a {
 }
 
 .project {
-  display: grid;
+  display: flex;
+  flex-wrap: wrap;
   align-items: center;
   padding: 20px;
   gap: 20px;
-  grid-template-columns: repeat(3, 1fr);
 }
 
 .project img {

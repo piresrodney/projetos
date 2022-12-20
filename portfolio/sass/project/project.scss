@@ -1,12 +1,14 @@
 .project {
-    display: grid;
-    align-items: center;
-    padding: 20px;    
-    gap: 20px;
-    grid-template-columns: repeat(3, 1fr);
+  // display: grid;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 20px;
+  gap: 20px;
+  // grid-template-columns: repeat(3, 1fr);
 }
 
 .project img {
-    border: 1px solid black;
-    padding: 50px 75px;
+  border: 1px solid black;
+  padding: 50px 75px;
 }
