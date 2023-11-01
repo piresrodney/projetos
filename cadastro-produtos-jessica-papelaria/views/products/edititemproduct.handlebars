@@ -1,0 +1,27 @@
+<h1>Editando Item para: {{productName.productName}} </h1>
+<form action="/products/edititemproduct" method="POST">
+  <input type="hidden" name="itemId" value="{{product.id}}">
+  <input type="hidden" name="productId" value="{{productName.id}}">
+
+  <div class="form-control">
+    <label for="product-size">Tamanho</label>
+    <input type="text" name="productSize" id="product-size" placeholder="Tamanho do produto" value="{{product.productSize}}" autofocus>
+  </div>
+
+  <div class="form-control">
+    <label for="product-quantity">Quantidade</label>
+    <input type="number" name="productQuantity" id="product-quantity" value="{{product.productQuantity}}" placeholder="Quantidade do produto">
+  </div>
+
+  <div class="form-control">
+    <label for="product-value">Valor</label>
+    <input type="number" name="productValue" id="product-value" value="{{product.productValue}}"  placeholder="Valor do produto" min="0" max="10000" step=".01">
+  </div>
+
+  <div class="form-control">
+    <label for="product-description">Descrição:</label>
+    <textarea type="text" name="productDescription" id="product-description" placeholder="Descrição do item">{{product.productDescription}}</textarea>
+  </div>
+
+  <input type="submit" value="Editar">
+</form>

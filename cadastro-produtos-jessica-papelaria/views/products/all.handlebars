@@ -1,0 +1,18 @@
+<h1>Todos Produtos</h1>
+<ul class="product-list">
+  {{#each products}}
+    <li>
+      <a href="/products/allitemsproduct/{{this.id}}" class="product-name">{{this.productName}}</a>
+      <div class="action">
+        <a href="/products/createitemproduct/{{this.id}}"><i class="bi bi-plus-square"></i></a>
+        <a href="/products/editproduct/{{this.id}}"><i class="bi bi-pencil-square"></i></a>   
+        <form action="/products/remove" method="post">
+          <input type="hidden" name="id" value="{{this.id}}">
+          <button type="submit">
+            <a href=""><i class="bi bi-x-lg"></i></a>  
+          </button>
+        </form>
+      </div>
+    </li>
+  {{/each}}
+</ul>

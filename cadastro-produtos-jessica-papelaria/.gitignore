@@ -1,0 +1,5 @@
+#Pastas ignoradas
+/node_modules
+
+#Arquivos ignorados
+.env

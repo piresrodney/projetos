@@ -1,0 +1,26 @@
+<h1>Novo Item para: {{product.productName}} </h1>
+<form action="/products/createitemproduct" method="POST">
+  <input type="hidden" name="ProductId" value="{{product.id}}">
+
+  <div class="form-control">
+    <label for="product-size">Tamanho</label>
+    <input type="text" name="productSize" id="product-size" placeholder="Tamanho do produto" autofocus>
+  </div>
+
+  <div class="form-control">
+    <label for="product-quantity">Quantidade</label>
+    <input type="number" name="productQuantity" id="product-quantity" placeholder="Quantidade do produto">
+  </div>
+
+  <div class="form-control">
+    <label for="product-value">Valor</label>
+    <input type="number" name="productValue" id="product-value" placeholder="Valor do produto" min="0" max="10000" step=".01">
+  </div>
+
+  <div class="form-control">
+    <label for="product-description">Descrição:</label>
+    <textarea type="text" name="productDescription" id="product-description" placeholder="Descrição do item"></textarea>
+  </div>
+
+  <input type="submit" value="Criar">
+</form>
