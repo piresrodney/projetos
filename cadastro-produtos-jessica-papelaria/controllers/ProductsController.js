@@ -1,7 +1,18 @@
 const Product = require('../models/Product')
 const ProductItem = require('../models/ItemsProduct')
+const formatNumber = require('number-currency-format-2')
 
-module.exports = class ProductsController {
+function formatProductValue(itemsProduct) {
+  for (let index = 0; index < itemsProduct.length; index++) {
+    itemsProduct[index].productValue = formatNumber.format(itemsProduct[index].productValue, {
+      currency: 'R$ ',
+      spacing: false,
+      currencyPosition: 'LEFT'
+    })    
+  }
+}
+
+module.exports = class ProductsController { 
   static loadCreateProducts(req, res) {
     res.render('products/create')
   }  
@@ -65,9 +76,7 @@ module.exports = class ProductsController {
     const productId = req.params.id    
     let itemsProduct = await ProductItem.findAll({ where: { ProductId: productId}, raw: true })
 
-    // itemsProduct.productValue = itemsProduct.productValue.toFixed(2)
-    // const formattedNumber = itemsProduct.productValue.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-    // console.log(formattedNumber);
+    formatProductValue(itemsProduct)
 
     res.render('products/allitemsproduct', { itemsProduct })
   }
@@ -87,7 +96,9 @@ module.exports = class ProductsController {
  
     await ProductItem.destroy({ where: { id: idItem } })
 
-    const itemsProduct = await ProductItem.findAll({ where: { ProductId: idProduct}, raw: true })
+    let itemsProduct = await ProductItem.findAll({ where: { ProductId: idProduct}, raw: true })
+
+    formatProductValue(itemsProduct)
 
     res.render('products/allitemsproduct', { itemsProduct })
   }
@@ -105,7 +116,9 @@ module.exports = class ProductsController {
 
     await ProductItem.update(productItem, { where: { id }})
 
-    const itemsProduct = await ProductItem.findAll({ where: { ProductId: productId}, raw: true })
+    let itemsProduct = await ProductItem.findAll({ where: { ProductId: productId}, raw: true })
+
+    formatProductValue(itemsProduct)
 
     res.render('products/allitemsproduct', { itemsProduct })
   }
