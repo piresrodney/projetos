@@ -59,7 +59,7 @@ section {
   font-weight: bold;
 }
 
-#label-stocks, #stocks, #input-submit {
+#label-stocks, #stocks, .input-form {
   font-size: 1.1rem;
 }
 
@@ -67,7 +67,8 @@ section {
   text-transform: uppercase;
 }
 
-#input-submit {
+/* #input-submit */
+.input-form {
   padding-left: 35px;
   padding-right: 35px;
   border: 2px solid black;
@@ -76,7 +77,9 @@ section {
   cursor: pointer;
 }
 
-#input-submit:hover {
+/* #input-submit:hover  */
+.input-form:hover
+{
   background-color: rgba(0, 0, 0, 0.068);
   transition: 0.4s;
   border: 2px solid;
