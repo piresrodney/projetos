@@ -1,0 +1,1 @@
+setTimeout(() => { window.location.reload(1) }, 180000) // 3 minutos

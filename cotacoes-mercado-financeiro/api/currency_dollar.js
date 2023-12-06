@@ -1,23 +1,14 @@
-const axios = require('axios')
+const currencyURL = 'https://brapi.dev/api/v2/currency?currency=USD-BRL&tokenxaKhfFAyWPAhyHVFetxkuG'
 
-// class CurrencyDolar {
-//   constructor() {
-//     currencyDolar = currencyDolar()
-//   }
+async function currencyDolar() {
+  const currencyResponse = await fetch(currencyURL)
+  const currencyData = await currencyResponse.json()
+  const dollarText = currencyData.currency[currencyData.currency.length-1].askPrice
+  const dollarValue = Number(dollarText).toFixed(2).replace('.', ',')
 
-//   currencyDolar() {
-//     axios.get('https://brapi.dev/api/v2/currency?currency=USD-BRL')
-//     .then(response => {        
-//       return response
-//     })
-//   }
-// }
+  console.log(dollarValue)
 
-function currencyDolar() {
-  axios.get('https://brapi.dev/api/v2/currency?currency=USD-BRL')
-  .then(response => {        
-    return response
-  })
+  return dollarValue
 }
 
 module.exports = currencyDolar
