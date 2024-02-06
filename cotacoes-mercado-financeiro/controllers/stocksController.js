@@ -22,17 +22,37 @@ module.exports = class StockController {
     for (const urlItem of url.entries()) {    
       const response = await fetch(urlItem[1])
       const data = await response.json()
-      const returnApi = { 
-        tag: data.results[0].symbol, 
-        name: data.results[0].longName.substr(0, 35), 
-        perc: data.results[0].regularMarketChangePercent.toFixed(2).replace('.', ','), 
-        price: data.results[0].regularMarketPrice.toFixed(2).replace('.', ',')
-      }
 
-      stocksView.push(returnApi)
+      try {
+        const returnApi = { 
+          tag: data.results[0].symbol, 
+          name: data.results[0].longName.substr(0, 35), 
+          perc: data.results[0].regularMarketChangePercent.toFixed(2).replace('.', ','), 
+          price: data.results[0].regularMarketPrice.toFixed(2).replace('.', ',')
+        }
+      
+        stocksView.push(returnApi)
+      } catch (error) {
+        const returnError = {
+          tag: data.message.substr(23, data.message.length), 
+          name: data.message, 
+          perc: '0,00', 
+          price: '0,00'
+        }
+      
+        stocksView.push(returnError)
+      }      
     } 
 
     res.render('stocks/all', { stocksView, dollarValue })    
+  }
+
+  static createStockRender(req, res){
+    res.render('stocks/create')
+  }
+
+  static infoStock(req, res) {
+    res.render('stocks/info')
   }
 
   static async createStock(req, res) {

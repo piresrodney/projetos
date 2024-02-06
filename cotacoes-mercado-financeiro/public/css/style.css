@@ -7,6 +7,7 @@
 
 body {
   background-color: #d7dbe0;
+  padding-bottom: 7px;
 }
 
 .navegation {          
@@ -19,6 +20,11 @@ body {
   position: fixed;
   width: 100%;
   font-size: 1.87rem;
+}
+
+.navegation button a {
+  text-decoration: none;
+  color: #002333;
 }
 
 .new-stock-button {
@@ -49,8 +55,12 @@ section {
   padding-right: 0.56rem; /* padding-right: 25px; */
 }
 
+section p input {
+  margin-top: 20px;
+}
+
 #form-post-stocks {
-  display: none;
+  /* display: none; */
   text-align: center;
   padding-bottom: 1rem;
 }
@@ -67,7 +77,6 @@ section {
   text-transform: uppercase;
 }
 
-/* #input-submit */
 .input-form {
   padding-left: 35px;
   padding-right: 35px;
@@ -77,9 +86,34 @@ section {
   cursor: pointer;
 }
 
-/* #input-submit:hover  */
-.input-form:hover
-{
+.input-form:hover {
+  background-color: rgba(0, 0, 0, 0.068);
+  transition: 0.4s;
+  border: 2px solid;
+}
+
+.input-tag {
+  padding-left: 3.5px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+}
+
+.button-form {
+  font-size: 1.1rem;
+  padding-left: 35px;
+  padding-right: 35px;
+  border: 2px solid black;
+  border-radius: .7rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.button-form a {
+  text-decoration: none;
+  color: black;
+}
+
+.button-form:hover {
   background-color: rgba(0, 0, 0, 0.068);
   transition: 0.4s;
   border: 2px solid;
@@ -112,7 +146,7 @@ ul {
 li {
   background-color: #edeff1;
   border-radius: 0.3125rem;
-  cursor: pointer;
+  /* cursor: pointer; */
   text-align: center;
   width: 35%;
 }
@@ -120,6 +154,16 @@ li {
 li:hover {
   background-color: #e5e8eb;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.068);
+  transition: 0.4s;
+}
+
+p a {
+  text-decoration: none;
+}
+
+p a:hover {
+  background-color: #d7dbe0;
+  border-radius: 0.3125rem;
   transition: 0.4s;
 }
 

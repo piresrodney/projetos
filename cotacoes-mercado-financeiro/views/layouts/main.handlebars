@@ -12,11 +12,15 @@
   <nav class="navegation">
     <p><span></span></p>
     <p>Cotação de Ativos</p>    
-    <button type="button" class="new-stock-button" onclick="showForm()">Novo ativo</button>    
+    <button type="button" class="new-stock-button">
+      <a href="/stocks/createstocks">Novo ativo</a>
+      
+    </button>
+    {{!-- <button type="button" class="new-stock-button" onclick="showForm()">Novo ativo</button>     --}}
   </nav>  
   {{{body}}}  
 
-  <script src="/javascript/new-stocks.js"></script>
+  {{!-- <script src="/javascript/new-stocks.js"></script> --}}
   <script src="/javascript/refresh-page.js"></script>
 </body>
 </html>

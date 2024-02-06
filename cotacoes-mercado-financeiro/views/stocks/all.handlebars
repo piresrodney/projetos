@@ -1,35 +1,37 @@
 <section>
-  <form action="/stocks/createstocks" id="form-post-stocks" method="post">
+  {{! <form action="/stocks/createstocks" id="form-post-stocks" method="post">
     <label for="stocks" id="label-stocks">Ativo</label>
     <input type="text" id="stocks" name="tagStock">
     <input type="submit" id="input-submit" class="input-form" value="Gravar" onclick="hideForm()">
     <input type="button" value="Cancelar" class="input-form" onclick="hideForm()">
-  </form>
+  </form> }}
 
   <div id="dollar-value">
     <div>
-      <img src="/images/favicon_io_usa/favicon-32x32.png" alt="" srcset="">
+      <img src="/images/favicon_io_usa/favicon-32x32.png" alt="" srcset="" />
     </div>
     <div>
       <p>US$ 1,00 = R$ {{dollarValue}}</p>
     </div>
-    
   </div>
-  
+
   <ul id="ul-stocks">
     {{#each stocksView}}
-      <li id="{{this.tag}}"> 
+      <li id="{{this.tag}}">
         <div class="external-div">
           <div class="header-div">
-            <p class="stock-info">{{this.tag}}</p>
-            <p class="stock-perc" id="{{this.tag}}-perc">{{this.perc}}%</p>                      
+            <p class="stock-info"><a
+                href="/stocks/infostock"
+                class="link-{{this.tag}}"
+              >{{this.tag}}</a></p>
+            <p class="stock-perc" id="{{this.tag}}-perc">{{this.perc}}%</p>
           </div>
-                    
+
           <div class="footer-div">
             <p class="stock-name">{{this.name}}</p>
             <p class="stock-info">R$ {{this.price}}</p>
-          </div>        
-        </div>        
+          </div>
+        </div>
       </li>
     {{/each}}
   </ul>
@@ -38,4 +40,3 @@
 <script src="/javascript/run-stocks.js"></script>
 <script src="/javascript/new-stocks.js"></script>
 <script src="/javascript/validate-exists-stock.js"></script>
-
