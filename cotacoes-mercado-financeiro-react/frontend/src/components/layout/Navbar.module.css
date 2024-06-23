@@ -1,0 +1,61 @@
+.navegation {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 1.25rem; /* padding: 20px; */
+  background-color: #002333;
+  color: #deefe7;
+  position: fixed;
+  width: 100%;
+  font-size: 1.87rem;
+}
+
+.navegation button a {
+  text-decoration: none;
+  color: #002333;
+}
+
+.newStockButton {
+  background-color: #deefe7;
+  color: #002333;
+  width: 7.5rem;
+  border: 0.125rem solid #deefe7;
+  padding: 0.625rem;
+  border-radius: 1.25rem;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.newStockButton:hover {
+  background-color: #1a678b;
+  color: #deefe7;
+  border: 0.125rem solid #deefe7;
+  transition: 0.4s;
+}
+
+.logoutButton {
+  margin-left: 10px;
+  background-color: #002333;
+  color: #deefe7;
+  width: 7.5rem;
+  border: 0.125rem solid #deefe7;
+  padding: 0.625rem;
+  border-radius: 1.25rem;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.logoutButton:hover {
+  background-color: #deefe7;
+  color: #f10c0c;
+  border: 0.125rem solid #deefe7;
+  transition: 0.4s;
+}
+
+@media (max-width: 375px) {
+  .navegation {
+    justify-content: center;
+  }
+}

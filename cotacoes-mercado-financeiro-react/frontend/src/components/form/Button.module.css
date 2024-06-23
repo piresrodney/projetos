@@ -1,0 +1,16 @@
+.input_submit {
+  cursor: pointer;
+  background-color: #002333;
+  color: #fff;
+  padding: 7px;
+  font-size: 15px;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.input_submit:hover {
+  background-color: #15526e;
+  color: #deefe7;
+  border: 0.125rem solid #deefe7;
+  transition: 0.4s;
+}

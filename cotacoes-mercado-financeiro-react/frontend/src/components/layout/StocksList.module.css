@@ -1,0 +1,73 @@
+ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.625rem;
+}
+
+li {
+  background-color: #edeff1;
+  border-radius: 0.3125rem;
+  /* cursor: pointer; */
+  text-align: center;
+  width: 400px;
+}
+
+li:hover {
+  background-color: #e5e8eb;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.068);
+  transition: 0.4s;
+}
+
+.external_div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: left;
+  padding-left: 0.625rem;
+  padding: 8px;
+}
+
+.header_div {
+  padding-bottom: 1.5625rem;
+}
+
+.footer_div {
+  padding-top: 1.5625rem;
+}
+
+.header_div,
+.footer_div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-left: 0.625rem;
+  padding-right: 0.625rem;
+}
+
+.stock_info {
+  font-weight: bold;
+}
+
+#stock_name,
+#stock_perc {
+  font-style: italic;
+  font-weight: bold;
+}
+
+img {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+@media (max-width: 425px) {
+  ul {
+    margin-top: 30px;
+  }
+
+  li {
+    width: 100%;
+  }
+}

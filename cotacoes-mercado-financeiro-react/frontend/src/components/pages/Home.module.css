@@ -1,0 +1,11 @@
+section {
+  max-width: 75rem;
+  margin: 0 auto;
+  padding-top: 7rem;
+  padding-left: 0.56rem;
+  padding-right: 0.56rem;
+}
+
+section p input {
+  margin-top: 20px;
+}

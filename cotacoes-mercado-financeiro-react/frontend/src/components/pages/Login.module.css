@@ -1,0 +1,51 @@
+section {
+  display: flex;
+  justify-content: center;
+}
+
+.div_background {
+  padding: 50px;
+  background-color: rgba(255, 255, 255, 0.651);
+  border-radius: 15px;
+  width: 420px;
+  margin: 50px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.input_submit {
+  cursor: pointer;
+  background-color: #002333;
+  color: #fff;
+  padding: 7px;
+  font-size: 15px;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.input_submit:hover {
+  background-color: #15526e;
+  color: #deefe7;
+  border: 0.125rem solid #deefe7;
+  transition: 0.4s;
+}
+
+.p_userWithoutAccount {
+  margin-top: 10px;
+}
+
+.spanLink a {
+  padding: 0 1.5px;
+  font-weight: bolder;
+  text-decoration: none;
+  color: #000;
+}
+
+.spanLink a:hover {
+  transition: 0.4s;
+  border-radius: 4px;
+  background-color: #15526e;
+  color: #fff;
+}

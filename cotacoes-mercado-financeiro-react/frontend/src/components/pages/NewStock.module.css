@@ -1,0 +1,59 @@
+.formNewStock {
+  max-width: 22rem;
+  margin: 0 auto;
+  padding-top: 7rem;
+  padding-left: 0.56rem;
+  padding-right: 0.56rem;
+}
+
+.divButtons {
+  display: flex;
+  gap: 5px;
+}
+
+.input_submit {
+  cursor: pointer;
+  background-color: #002333;
+  color: #fff;
+  padding: 7px;
+  font-size: 15px;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.input_submit:hover {
+  background-color: #15526e;
+  color: #deefe7;
+  border: 0.125rem solid #deefe7;
+  transition: 0.4s;
+}
+
+.input_back {
+  cursor: pointer;
+  background-color: #002333;
+  color: #fff;
+  padding: 7px;
+  font-size: 15px;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.input_back:hover {
+  background-color: #ffffff;
+  color: #ff0000;
+  border: 0.125rem solid #ff0000;
+  transition: 0.4s;
+  font-weight: bold;
+}
+
+@media (max-width: 375px) {
+  .formNewStock {
+    padding-top: 9rem;
+  }
+}
+
+@media (max-width: 280px) {
+  .formNewStock {
+    padding-top: 12rem;
+  }
+}

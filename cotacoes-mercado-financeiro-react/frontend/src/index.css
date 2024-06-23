@@ -1,0 +1,17 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Nunito", Arial, Helvetica, sans-serif;
+}
+
+body {
+  background-color: #d7dbe0;
+  padding-bottom: 7px;
+}
+
+@media (max-width: 375px) {
+  section {
+    padding-top: 9rem;
+  }
+}
