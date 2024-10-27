@@ -1,0 +1,44 @@
+.section {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 10px;
+  height: 100%;
+}
+
+.usuarios {
+  flex: 1;
+  margin-top: 15px;
+  text-align: center;
+  background-color: rgba(241, 241, 241, 0.87);
+  border-radius: 7px;
+  color: rgb(48, 48, 48);
+  padding: 15px 70px;
+}
+
+.usuarios p {
+  font-size: 15px;
+}
+
+.usuariosInterno {
+  padding: 15px 70px;
+  height: 135px;
+}
+
+.link a {
+  color: rgb(48, 48, 48);
+  text-decoration: none;
+}
+
+.link a:hover {
+  background-color: rgb(48, 48, 48);
+  color: rgba(241, 241, 241, 0.87);
+  border-radius: 7px;
+  transition: 0.5s;
+  padding: 2px 15px;
+}
+
+div button {
+  margin: 10px;
+}

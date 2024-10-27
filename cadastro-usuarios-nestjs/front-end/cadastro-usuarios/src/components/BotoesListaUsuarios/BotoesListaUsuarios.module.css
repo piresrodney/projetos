@@ -1,0 +1,19 @@
+.botao {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  background-color: rgb(48, 48, 48);
+  color: rgba(241, 241, 241, 0.87);
+  margin-top: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.botao:hover {
+  transition: 0.5s;
+  background-color: rgb(216, 214, 214);
+  color: rgb(48, 48, 48);
+}

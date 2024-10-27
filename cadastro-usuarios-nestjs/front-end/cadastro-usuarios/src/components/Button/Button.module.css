@@ -1,0 +1,19 @@
+.buttonDefault {
+  padding: 10px 20px;
+  background-color: rgba(241, 241, 241, 0.87);
+  color: rgb(48, 48, 48);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: auto;
+  margin: 25px;
+  font-weight: bold;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+.buttonDefault:hover {
+  transition: 0.5s;
+  background-color: rgb(48, 48, 48);
+  color: rgba(241, 241, 241, 0.87);
+  border: 1px solid rgba(241, 241, 241, 0.87);
+}
