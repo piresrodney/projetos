@@ -3,6 +3,7 @@ import styles from "../NovoUsuario/NovoUsuario.module.css";
 import { useNavigate, useParams } from "react-router-dom";
 import api from "../../api/api";
 import { AxiosError } from "axios";
+import Button from "../../components/Button/Button";
 
 const AtualizaUsuario = () => {
   const [nome, setNome] = useState<string>("");
@@ -77,17 +78,10 @@ const AtualizaUsuario = () => {
       {mensagemErro?.length > 0
         ? mensagemErro.map((m) => <p className={styles.mensagem}>{m}</p>)
         : null}
-      {/* <button className={styles.submit} type="submit">
-        Gravar
-      </button> */}
 
       <span className={styles.spanBotoes}>
-        <button className={styles.submit} type="submit">
-          Gravar
-        </button>
-        <button className={styles.submit} type="button" onClick={voltarTela}>
-          Voltar
-        </button>
+        <Button text={{ caption: "Gravar" }} onClick={() => {}} />
+        <Button text={{ caption: "Voltar" }} onClick={voltarTela} />
       </span>
     </form>
   );

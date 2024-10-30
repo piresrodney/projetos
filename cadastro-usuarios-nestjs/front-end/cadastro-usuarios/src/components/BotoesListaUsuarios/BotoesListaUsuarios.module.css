@@ -1,7 +1,10 @@
-.botao {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  background-color: rgb(48, 48, 48);
-  color: rgba(241, 241, 241, 0.87);
+.botao,
+.excluir {
+  font-family: "Nunito", serif;
+  color: #e8f1f2;
+  background-color: #247ba0;
+  border: none;
+  /* border: 1px solid #247ba0; */
   margin-top: 15px;
   padding-top: 10px;
   padding-bottom: 10px;
@@ -14,6 +17,19 @@
 
 .botao:hover {
   transition: 0.5s;
-  background-color: rgb(216, 214, 214);
-  color: rgb(48, 48, 48);
+  background-color: #e8f1f2;
+  color: #247ba0;
+  border: 1px solid #247ba0;
+}
+
+.excluir {
+  color: #e8f1f2;
+  background-color: rgb(236, 56, 56);  
+}
+
+.excluir:hover {
+  transition: 0.5s;
+  background-color: #e8f1f2;
+  color: rgb(194, 0, 0);
+  border: 1px solid rgb(194, 0, 0);
 }

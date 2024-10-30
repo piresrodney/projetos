@@ -46,7 +46,7 @@ const ListaUsuarios: React.FC = () => {
               <p>Telefone: {usuario.telefone}</p>
             ) : null}
           </div>
-          <div>
+          <div className={styles.divBotoesLista}>
             <BotoesListaUsuarios
               text={{ caption: "Editar" }}
               onClick={() => (

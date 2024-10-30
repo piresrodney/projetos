@@ -7,7 +7,14 @@ interface PropsButton {
 
 const Button = ({ text, onClick }: PropsButton) => {
   return (
-    <button className={styles.buttonDefault} onClick={onClick}>
+    <button
+      className={
+        text.caption === "Gravar" || text.caption === "Novo usuário"
+          ? styles.buttonDefault
+          : styles.buttonVoltar
+      }
+      onClick={onClick}
+    >
       {text.caption}
     </button>
   );

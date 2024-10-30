@@ -7,10 +7,11 @@ interface PropriedadesBotao {
 
 const BotoesListaUsuarios = ({ text, onClick }: PropriedadesBotao) => {
   return (
-    <button className={styles.botao} onClick={onClick}>
+    <button className={text.caption === 'Editar' ? styles.botao : styles.excluir} onClick={onClick}>
       {text.caption}
     </button>
   );
 };
 
 export default BotoesListaUsuarios;
+// styles.botao

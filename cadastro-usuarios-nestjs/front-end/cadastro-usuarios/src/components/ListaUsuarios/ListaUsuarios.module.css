@@ -32,13 +32,41 @@
 }
 
 .link a:hover {
-  background-color: rgb(48, 48, 48);
+  background-color: #13293d;;
   color: rgba(241, 241, 241, 0.87);
   border-radius: 7px;
   transition: 0.5s;
   padding: 2px 15px;
 }
 
+.divBotoesLista {
+  margin: 10px;
+}
+
 div button {
   margin: 10px;
+}
+
+@media (max-width: 1024px) {
+  .divBotoesLista {
+    margin-top: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .divBotoesLista {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 574px) {
+  .divBotoesLista {
+    margin-top: 35px;
+  }
+}
+
+@media (max-width: 425px) {
+  .divBotoesLista {
+    margin-top: 30px;
+  }
 }
