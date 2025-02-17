@@ -4,7 +4,7 @@ module.exports = class UserController {
   static async createUser(req, res) {
     const { name, nickname, email, password, confirmPassword } = req.body;
 
-    console.log(nickname)
+    console.log(nickname);
 
     if (!name) {
       res.status(422).json({ message: "Informe o nome do usuário" });
@@ -41,6 +41,7 @@ module.exports = class UserController {
       res.status(422).json({
         message: "A senha e confirmação de senha devem ser iguais",
       });
+
       return;
     }
 
