@@ -9,7 +9,7 @@ import styles from "./NewStockForm.module.css";
 import Input from "./Input";
 import AlertMessage from "./AlertMessage";
 
-const NewStockForm = () => {
+const            NewStockForm = () => {
   const navigate = useNavigate();
   const [stock, setStock] = useState({});
   const [returnReq, setReturnReq] = useState({});
@@ -17,7 +17,9 @@ const NewStockForm = () => {
   const { userLogged } = useContext(Context);
 
   useEffect(() => {
-    setShowAlert(returnReq.status !== "202" ? false : true);
+    setShowAlert(
+      returnReq.status !== "202" && returnReq.status !== "401" ? false : true
+    );
 
     if (returnReq.status === "201") backToHome();
   }, [returnReq]);
@@ -33,16 +35,22 @@ const NewStockForm = () => {
   async function submit(e) {
     e.preventDefault();
 
-    const token = { _id: sessionStorage.getItem("token") };
+    const idUser = { _id: sessionStorage.getItem("idUser") };
+
     try {
       const data = await api
-        .post("/stocks/createstock", { stock, token })
+        .post("/stocks/createstock", { stock, idUser })
         .then((response) => {
           setReturnReq(response.data);
           return;
         });
     } catch (error) {
-      console.log(error);
+      const errorResult = {
+        status: String(error.response.request.status),
+        message: error.response.data.message,
+      };
+      setReturnReq(errorResult);
+      return;
     }
   }
 

@@ -1,10 +1,15 @@
 const User = require("../models/User");
+const jwt = require("jsonwebtoken");
+const bcrypt = require("bcrypt");
+
+// helpers
+const createToken = require("../helpers/create-token");
+const getToken = require("../helpers/get-token");
+const criptograph = require("../helpers/password-criptograph");
 
 module.exports = class UserController {
   static async createUser(req, res) {
     const { name, nickname, email, password, confirmPassword } = req.body;
-
-    console.log(nickname);
 
     if (!name) {
       res.status(422).json({ message: "Informe o nome do usuário" });
@@ -55,11 +60,18 @@ module.exports = class UserController {
     }
 
     try {
-      const user = new User({ name, nickname, email, password });
+      const passwordHash = await criptograph(password);
+
+      const user = new User({
+        name,
+        nickname,
+        email,
+        password: passwordHash,
+      });
 
       await user.save();
 
-      res.status(201).json({ message: "Usuário criado com sucesso" });
+      await createToken(user, req, res);
     } catch (error) {
       res.status(500).json({ message: error.message });
 
@@ -82,15 +94,43 @@ module.exports = class UserController {
       return;
     }
 
-    const userExists = await User.findOne({ email, password });
+    const user = await User.findOne({ email });
 
-    if (!userExists) {
-      res.status(500).json({ message: "E-mail ou senha inválido" });
+    if (!user) {
+      res.status(500).json({
+        message: "Não existe um usuário cadastro com o e-mail informado",
+      });
       return;
     }
 
-    res
-      .status(200)
-      .json({ data: userExists, message: "Usuário logado com sucesso" });
+    const passwordValid = await bcrypt.compare(password, user.password);
+
+    if (!passwordValid) {
+      res.status(500).json({
+        message: "Senha inválida",
+      });
+      return;
+    }
+
+    await createToken(user, req, res);
+  }
+
+  static async checkUser(req, res) {
+    let currentUser;
+
+    console.log(req.headers.authorization);
+
+    if (req.headers.authorization) {
+      const token = getToken(req);
+      const decoded = jwt.verify(token, "secretQueViraDoEnv");
+
+      currentUser = await User.findOne({ email: decoded.email }).select(
+        "-password"
+      );
+    } else {
+      currentUser = null;
+    }
+
+    res.status(200).send(currentUser);
   }
 };

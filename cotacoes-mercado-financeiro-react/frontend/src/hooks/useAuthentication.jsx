@@ -1,6 +1,6 @@
 import api from "../utils/api";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function useAuthentication() {
@@ -9,30 +9,37 @@ export default function useAuthentication() {
   const [userLogged, setUserLogged] = useState({});
   const navigate = useNavigate();
 
+  useEffect(() => {
+    const token = sessionStorage.getItem("token");
+
+    if (token) {
+      api.defaults.headers.authorization = `Bearer ${token}`;
+    }
+  }, []);
+
   async function login(user) {
     let msgType = false;
 
     try {
-      const data = await api.post("/user/login", user).then((response) => {
-        msgType = true;
-        setUserLogged(response.data.data);
-        setMessageException(response.data.message);
-        authorization(msgType, response.data.data._id);
-        return response.data;
-      });
+      const response = await api.post("/user/login", user);
+      msgType = true;
+      setUserLogged(response.data.data);
+      authorization(msgType, response);
+      return response.data;
     } catch (error) {
       setMessageException(error.response.data.message);
       authorization(msgType);
     }
   }
 
-  async function authorization(logged, tokenUser) {
+  async function authorization(logged, reponseLogin) {
     setAuthenticated(logged);
 
     sessionStorage.setItem("authorized", logged);
 
     if (logged) {
-      sessionStorage.setItem("token", tokenUser);
+      sessionStorage.setItem("token", reponseLogin.data.token);
+      sessionStorage.setItem("idUser", reponseLogin.data.id);
       navigate("/stocks");
     }
   }
@@ -41,8 +48,25 @@ export default function useAuthentication() {
     setAuthenticated(false);
     sessionStorage.setItem("authorized", false);
     sessionStorage.setItem("token", "");
+    sessionStorage.setItem("idUser", "");
     navigate("/");
   }
 
-  return { authenticated, login, messageException, logout, userLogged };
+  async function registerUser(user) {
+    try {
+      const response = await api.post("/user/createuser", user);
+      return response.data;
+    } catch (error) {
+      return error;
+    }
+  }
+
+  return {
+    authenticated,
+    login,
+    messageException,
+    logout,
+    userLogged,
+    registerUser,
+  };
 }

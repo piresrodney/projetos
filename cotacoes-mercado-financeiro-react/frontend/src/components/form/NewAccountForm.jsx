@@ -1,5 +1,7 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
+
+import { Context } from "../../context/UserContext";
 
 import api from "../../utils/api";
 
@@ -13,14 +15,16 @@ const NewAccountForm = () => {
   const [user, setUser] = useState({});
   const [showMessage, setShowMessage] = useState(false);
   const [returnReq, setReturnReq] = useState({});
+  const { registerUser } = useContext(Context);
 
   const navigate = useNavigate();
 
   useEffect(() => {
-    setShowMessage(returnReq.response?.status === 422);
+    setShowMessage(returnReq?.response?.status === 422);
 
-    if (returnReq?.status === 201) {
+    if (returnReq?.status === 200) {
       sessionStorage.setItem("authorized", true);
+      sessionStorage.setItem("token", returnReq.token);
       navigate("/stocks");
     }
   }, [returnReq]);
@@ -31,14 +35,8 @@ const NewAccountForm = () => {
 
   async function submit(e) {
     e.preventDefault();
-    try {
-      const data = await api.post("/user/createuser", user).then((response) => {
-        setReturnReq(response);
-        return;
-      });
-    } catch (error) {
-      setReturnReq(error);
-    }
+    const result = await registerUser(user);
+    setReturnReq(result);
   }
 
   return (
@@ -81,7 +79,7 @@ const NewAccountForm = () => {
         />
         <AlertMessage
           showMessage={showMessage}
-          textMessage={returnReq.response?.data.message}
+          textMessage={returnReq?.response?.data.message}
         />
         <Button type="submit" value="Cadastrar" />
       </div>

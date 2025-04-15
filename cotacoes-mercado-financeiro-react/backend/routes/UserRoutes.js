@@ -3,5 +3,6 @@ const UserController = require("../controllers/UserController");
 
 router.post("/createuser", UserController.createUser);
 router.post("/login", UserController.login);
+router.get("/checkuser", UserController.checkUser);
 
 module.exports = router;

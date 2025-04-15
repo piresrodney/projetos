@@ -3,7 +3,7 @@ const Stock = require("../models/Stock");
 module.exports = class StockController {
   static async createStock(req, res) {
     const tag = req.body.stock.tagStock;
-    const userLogged = req.body.token;
+    const userLogged = req.body.idUser;
 
     if (!tag) {
       res
@@ -42,8 +42,8 @@ module.exports = class StockController {
   }
 
   static async getAllStocks(req, res) {
-    const userToken = req.body.token;
-    const stocks = await Stock.find({ "user._id": userToken });
+    const idUser = req.body.idUser;
+    const stocks = await Stock.find({ "user._id": idUser });
 
     if (!stocks) {
       res.status(202).json({

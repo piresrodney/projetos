@@ -11,20 +11,42 @@ const StocksList = () => {
   const [stocks, setStocks] = useState([]);
 
   useEffect(() => {
-    const token = sessionStorage.getItem("token");
-    api.patch("/stocks", { token }).then((response) => {
-      setStocks(response.data.stocksView);
-      return;
-    });
+    const idUser = sessionStorage.getItem("idUser");
+
+    const fetchStocks = async () => {
+      try {
+        const responseApi = await api.patch("/stocks", { idUser });
+        setStocks(responseApi.data.stocksView);
+      } catch (error) {
+        alert("Houve um erro ao tentar processar dados da api");
+        return;
+      }
+    };
+
+    fetchStocks();
+
+    const interval = setInterval(fetchStocks, 600000);
+
+    return () => clearInterval(interval);
   }, []);
 
   async function removeStock(tagStock) {
-    const data = await api
-      .delete(`/stocks/removestock/${tagStock}`, { headers: {} })
-      .then(() => {
-        const refreshStocks = stocks.filter((stock) => stock.tag !== tagStock);
-        setStocks(refreshStocks);
-      });
+    if (!confirm(`Confirma a exclusão do ativo "${tagStock}"?`)) {
+      return;
+    }
+
+    try {
+      const data = await api
+        .delete(`/stocks/removestock/${tagStock}`)
+        .then(() => {
+          const refreshStocks = stocks.filter(
+            (stock) => stock.tag !== tagStock
+          );
+          setStocks(refreshStocks);
+        });
+    } catch (error) {
+      alert(error.response.data.message);
+    }
   }
 
   return (
