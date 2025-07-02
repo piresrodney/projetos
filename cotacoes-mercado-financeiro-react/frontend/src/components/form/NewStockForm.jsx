@@ -9,7 +9,7 @@ import styles from "./NewStockForm.module.css";
 import Input from "./Input";
 import AlertMessage from "./AlertMessage";
 
-const            NewStockForm = () => {
+const NewStockForm = () => {
   const navigate = useNavigate();
   const [stock, setStock] = useState({});
   const [returnReq, setReturnReq] = useState({});
@@ -35,15 +35,11 @@ const            NewStockForm = () => {
   async function submit(e) {
     e.preventDefault();
 
-    const idUser = { _id: sessionStorage.getItem("idUser") };
+    const idUser = sessionStorage.getItem("idUser");
 
     try {
-      const data = await api
-        .post("/stocks/createstock", { stock, idUser })
-        .then((response) => {
-          setReturnReq(response.data);
-          return;
-        });
+      const data = await api.post("/stocks/createstock", { stock, idUser });
+      setReturnReq(data.data);
     } catch (error) {
       const errorResult = {
         status: String(error.response.request.status),

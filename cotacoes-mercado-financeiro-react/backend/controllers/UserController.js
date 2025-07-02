@@ -97,7 +97,7 @@ module.exports = class UserController {
     const user = await User.findOne({ email });
 
     if (!user) {
-      res.status(500).json({
+      res.status(404).json({
         message: "Não existe um usuário cadastro com o e-mail informado",
       });
       return;
@@ -106,7 +106,7 @@ module.exports = class UserController {
     const passwordValid = await bcrypt.compare(password, user.password);
 
     if (!passwordValid) {
-      res.status(500).json({
+      res.status(401).json({
         message: "Senha inválida",
       });
       return;

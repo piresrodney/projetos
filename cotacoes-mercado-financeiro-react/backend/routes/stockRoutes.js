@@ -8,6 +8,6 @@ router.patch("/", StockController.getAllStocks);
 
 router.post("/createstock", verifyToken, StockController.createStock);
 
-router.delete("/removestock/:tag", verifyToken, StockController.removeStock);
+router.delete("/removestock", verifyToken, StockController.removeStock);
 
 module.exports = router;

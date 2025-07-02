@@ -1,9 +1,16 @@
 const Stock = require("../models/Stock");
+const { fetchStockData } = require("../services/stockApiService");
+
+async function findStockByTagAndUser(tag, userId) {
+  console.log(`Procurando ativo ${tag} para o usuário ${userId}`);
+
+  return await Stock.findOne({ tag, user: { _id: userId } });
+}
 
 module.exports = class StockController {
   static async createStock(req, res) {
     const tag = req.body.stock.tagStock;
-    const userLogged = req.body.idUser;
+    const userId = req.body.idUser;
 
     if (!tag) {
       res
@@ -14,10 +21,7 @@ module.exports = class StockController {
 
     const tagStock = tag.toUpperCase();
 
-    const stockExists = await Stock.findOne({
-      tag: tagStock,
-      user: userLogged,
-    });
+    const stockExists = await findStockByTagAndUser(tagStock, userId);
 
     if (stockExists) {
       res
@@ -26,7 +30,7 @@ module.exports = class StockController {
       return;
     }
 
-    const stock = new Stock({ tag: tagStock, user: userLogged });
+    const stock = new Stock({ tag: tagStock, user: { _id: userId } });
 
     try {
       const newStock = await stock.save();
@@ -52,51 +56,31 @@ module.exports = class StockController {
       return;
     }
 
-    const url = Array();
-    const stocksView = Array();
-    const tagArray = Array();
-
-    stocks.map((element) => {
-      url.push(
-        `https://brapi.dev/api/quote/${element.tag}?token=xaKhfFAyWPAhyHVFetxkuG`
-      );
-
-      tagArray.push(element.tag);
-    });
-
-    let index = 0;
-    for (const urlItem of url.entries()) {
-      const response = await fetch(urlItem[1]);
-      const data = await response.json();
-
-      try {
-        const returnApi = {
-          id: stocks[index]._id,
-          tag: data.results[0].symbol,
-          name: data.results[0].longName.substr(0, 35),
-          perc: data.results[0].regularMarketChangePercent
-            .toFixed(2)
-            .replace(".", ","),
-          price: data.results[0].regularMarketPrice
-            .toFixed(2)
-            .replace(".", ","),
-        };
-
-        stocksView.push(returnApi);
-      } catch (error) {
-        const returnError = {
-          id: tagArray[index],
-          tag: tagArray[index],
-          name: "Houve algum problema no retorno do ativo",
-          perc: "0,00",
-          price: "0,00",
-        };
-
-        stocksView.push(returnError);
-      }
-
-      index++;
-    }
+    const stocksView = await Promise.all(
+      stocks.map(async (stock) => {
+        try {
+          const data = await fetchStockData(stock.tag);
+          const result = data.results[0];
+          return {
+            id: stock.tag,
+            tag: result.symbol,
+            name: result.longName.substr(0, 35),
+            perc: result.regularMarketChangePercent
+              .toFixed(2)
+              .replace(".", ","),
+            price: result.regularMarketPrice.toFixed(2).replace(".", ","),
+          };
+        } catch {
+          return {
+            id: stock.tag,
+            tag: stock.tag,
+            name: "Houve algum problema no retorno do ativo",
+            perc: "0,00",
+            price: "0,00",
+          };
+        }
+      })
+    );
 
     res.status(200).json({
       stocksView,
@@ -104,19 +88,20 @@ module.exports = class StockController {
   }
 
   static async removeStock(req, res) {
-    const tag = req.params.tag;
+    const tag = req.body.tagStock;
+    const userId = req.body.idUser;
 
-    const stockExists = await Stock.findOne({ tag });
+    const stockExists = await findStockByTagAndUser(tag, userId);
 
     if (!stockExists) {
-      res.status(202).json({
+      res.status(404).json({
         message: "Não foi encontrado ativo para realizar a exclusão",
       });
       return;
     }
 
     try {
-      await Stock.findOneAndDelete({ tag });
+      await Stock.findOneAndDelete({ tag, user: { _id: userId } });
       res.status(200).json({ message: `Ativo ${tag} excluído com sucesso` });
     } catch (error) {
       res.status(500).json({ message: error.message });

@@ -37,7 +37,9 @@ const StocksList = () => {
 
     try {
       const data = await api
-        .delete(`/stocks/removestock/${tagStock}`)
+        .delete(`/stocks/removestock`, {
+          data: { tagStock, idUser: sessionStorage.getItem("idUser") },
+        })
         .then(() => {
           const refreshStocks = stocks.filter(
             (stock) => stock.tag !== tagStock
